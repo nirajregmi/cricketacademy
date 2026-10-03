@@ -555,6 +555,11 @@ ul { list-style: none; }
 
 .form-success.show { display: block; }
 
+.form-success.error {
+  background: #fde8e7;
+  color: #8f1d18;
+}
+
 /* ===== Contact ===== */
 .contact { padding: 100px 0; background: var(--white); }
 

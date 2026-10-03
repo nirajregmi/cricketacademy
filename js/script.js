@@ -119,9 +119,10 @@ if (form) {
     field.addEventListener('change', () => validateField(field));
   });
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     formSuccess.classList.remove('show');
+    formSuccess.classList.remove('error');
 
     let isValid = true;
     fieldsToValidate.forEach(field => {
@@ -134,9 +135,36 @@ if (form) {
       return;
     }
 
-    // No backend configured yet — show confirmation locally.
-    formSuccess.classList.add('show');
-    form.reset();
-    formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = 'Submitting...';
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+      const result = await response.json();
+
+      if (!response.ok || String(result.success).toLowerCase() !== 'true') {
+        throw new Error(result.message || 'The application could not be sent. Please try again.');
+      }
+
+      form.reset();
+      formSuccess.textContent = '✅ Thank you! Your admission application has been submitted successfully. Our team will contact you soon.';
+      formSuccess.classList.add('show');
+    } catch (error) {
+      console.error('Admission application submission failed:', error);
+      formSuccess.textContent = error instanceof Error
+        ? `Could not send your application: ${error.message}`
+        : 'Could not send your application. Please check your connection and try again.';
+      formSuccess.classList.add('show', 'error');
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = originalButtonText;
+      formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
   });
 }
