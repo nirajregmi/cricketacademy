@@ -21,42 +21,23 @@ backToTop.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Animated stat counters
-const statItems = document.querySelectorAll('.stat-item h3');
-let countersStarted = false;
-
-function animateCounters() {
-  statItems.forEach(item => {
-    const target = parseInt(item.getAttribute('data-count'), 10);
-    let current = 0;
-    const step = Math.max(1, Math.ceil(target / 60));
-
-    const timer = setInterval(() => {
-      current += step;
-      if (current >= target) {
-        current = target;
-        clearInterval(timer);
-      }
-      item.textContent = current;
-    }, 25);
-  });
-}
-
-const statsSection = document.querySelector('.stats');
-if (statsSection) {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !countersStarted) {
-        countersStarted = true;
-        animateCounters();
-      }
-    });
-  }, { threshold: 0.4 });
-  observer.observe(statsSection);
-}
-
 // Footer year
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// Admission announcement
+const admissionPopup = document.getElementById('admissionPopup');
+const closePopup = document.getElementById('closePopup');
+const popupApply = document.getElementById('popupApply');
+
+if (admissionPopup instanceof HTMLDialogElement) {
+  admissionPopup.showModal();
+
+  closePopup.addEventListener('click', () => admissionPopup.close());
+  popupApply.addEventListener('click', () => admissionPopup.close());
+  admissionPopup.addEventListener('click', (event) => {
+    if (event.target === admissionPopup) admissionPopup.close();
+  });
+}
 
 // Admission form validation
 const form = document.getElementById('admissionForm');

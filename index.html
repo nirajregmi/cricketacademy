@@ -11,18 +11,44 @@
 </head>
 <body>
 
+<dialog class="admission-popup" id="admissionPopup" aria-labelledby="popupTitle">
+  <button class="popup-close" id="closePopup" type="button" aria-label="Close admission announcement" autofocus>&times;</button>
+  <p class="popup-kicker">🏏 We’re open · Admissions open</p>
+  <h2 id="popupTitle">Start your cricket journey in 2026</h2>
+  <p class="popup-intro">Join Sagarmatha Cricket Academy and take advantage of our current membership offers.</p>
+  <div class="popup-prices">
+    <div class="popup-price">
+      <span>Lifetime membership</span>
+      <strong>NPR 8,000</strong>
+      <del>Regularly NPR 12,000</del>
+    </div>
+    <div class="popup-price">
+      <span>Monthly membership</span>
+      <strong>NPR 3,500</strong>
+      <del>Regularly NPR 4,000</del>
+    </div>
+    <div class="popup-price">
+      <span>Weekend membership</span>
+      <strong>NPR 3,000</strong>
+      <del>Regularly NPR 3,500</del>
+    </div>
+  </div>
+  <p class="popup-personal">Personal coaching is also available.</p>
+  <a class="btn btn-primary btn-block popup-apply" href="#admission" id="popupApply">Apply for Admission</a>
+  <p class="popup-contact">Call <a href="tel:+9779841458502">9841 458502</a> or <a href="tel:+9779709558185">9709 558185</a></p>
+</dialog>
+
 <!-- Header -->
 <header class="site-header" id="header">
   <div class="container nav-wrap">
     <a href="#home" class="logo">
-      <span class="logo-icon">🏏</span>
+      <img class="logo-image" src="assets/logo.jpeg" alt="">
       <span class="logo-text">Sagarmatha <em>Cricket Academy</em></span>
     </a>
     <nav class="nav" id="nav">
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#programs">Programs</a>
-      <a href="#coaches">Coaches</a>
       <a href="#gallery">Gallery</a>
       <a href="#testimonials">Testimonials</a>
       <a href="#contact">Contact</a>
@@ -49,33 +75,11 @@
   <a href="#about" class="scroll-down" aria-label="Scroll down">↓</a>
 </section>
 
-<!-- Stats -->
-<section class="stats">
-  <div class="container stats-grid">
-    <div class="stat-item">
-      <h3 data-count="500">0</h3>
-      <p>Students Trained</p>
-    </div>
-    <div class="stat-item">
-      <h3 data-count="12">0</h3>
-      <p>Expert Coaches</p>
-    </div>
-    <div class="stat-item">
-      <h3 data-count="8">0</h3>
-      <p>Years of Excellence</p>
-    </div>
-    <div class="stat-item">
-      <h3 data-count="35">0</h3>
-      <p>National Players Produced</p>
-    </div>
-  </div>
-</section>
-
 <!-- About -->
 <section class="about" id="about">
   <div class="container about-grid">
     <div class="about-visual">
-      <div class="about-badge">Est. 2018</div>
+      <div class="about-badge">Est. 2026</div>
       <div class="about-shape"></div>
       <div class="about-shape2">🏆</div>
     </div>
@@ -127,42 +131,8 @@
       </div>
       <div class="program-card">
         <div class="program-icon">🥎</div>
-        <h3>Individual Coaching</h3>
+        <h3>Personal Coaching</h3>
         <p>One-on-one personalized sessions with senior coaches for focused, rapid skill improvement.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Coaches -->
-<section class="coaches" id="coaches">
-  <div class="container">
-    <p class="section-tag center">Meet The Team</p>
-    <h2 class="section-title center">Our Expert Coaches</h2>
-    <div class="coaches-grid">
-      <div class="coach-card">
-        <div class="coach-photo">🧑‍🏫</div>
-        <h3>Rajesh Shrestha</h3>
-        <span>Head Coach & Director</span>
-        <p>Former national player with 15+ years of coaching experience across all age groups.</p>
-      </div>
-      <div class="coach-card">
-        <div class="coach-photo">🧑‍🏫</div>
-        <h3>Bikash Thapa</h3>
-        <span>Batting Specialist</span>
-        <p>Level-2 certified coach specializing in technique correction and match temperament.</p>
-      </div>
-      <div class="coach-card">
-        <div class="coach-photo">🧑‍🏫</div>
-        <h3>Sunita Karki</h3>
-        <span>Women's Program Lead</span>
-        <p>Ex-national women's squad member leading our dedicated women's cricket program.</p>
-      </div>
-      <div class="coach-card">
-        <div class="coach-photo">🧑‍🏫</div>
-        <h3>Anil Gurung</h3>
-        <span>Bowling & Fitness Coach</span>
-        <p>Specialist in pace bowling mechanics, strength & conditioning for young athletes.</p>
       </div>
     </div>
   </div>
@@ -216,14 +186,14 @@
       <h2>Admission Form</h2>
       <p>Ready to start your cricketing journey? Fill out the form and our admissions team will contact you within 24-48 hours to confirm your enrollment and trial session.</p>
       <div class="admission-points">
-        <div><strong>📍 Location</strong><span>Bafal-13, Kathmandu, Nepal</span></div>
-        <div><strong>📞 Phone</strong><span>+977-98XXXXXXXX</span></div>
+        <div><strong>📍 Location</strong><span><a href="https://share.google/8bpNKQO0iYEYBhEjK" target="_blank" rel="noopener noreferrer">Bafal-13, Kathmandu, Nepal · Get directions</a></span></div>
+        <div><strong>📞 Phone</strong><span><a href="tel:+9779841458502">9841 458502</a> · <a href="tel:+9779709558185">9709 558185</a></span></div>
         <div><strong>✉️ Email</strong><span>info@sagarmathacricketacademy.com.np</span></div>
         <div><strong>⏰ Office Hours</strong><span>Sun–Fri, 7 AM – 6 PM</span></div>
       </div>
     </div>
 
-    <form class="admission-form" id="admissionForm" action="https://formsubmit.co/ajax/pengopenguin59@gmail.com" method="POST" novalidate>
+    <form class="admission-form" id="admissionForm" action="https://formsubmit.co/ajax/sagarmathacricketacademy@gmail.com" method="POST" novalidate>
       <h3>Student Registration</h3>
       <input type="hidden" name="_subject" value="New cricket academy admission application">
       <input type="hidden" name="_template" value="table">
@@ -262,7 +232,7 @@
             <option value="elite">Elite Performance Program</option>
             <option value="women">Women's Cricket Program</option>
             <option value="camp">Weekend & Holiday Camps</option>
-            <option value="individual">Individual Coaching</option>
+            <option value="individual">Personal Coaching</option>
           </select>
           <span class="error-msg"></span>
         </div>
@@ -317,12 +287,12 @@
     <div class="contact-details">
       <p class="section-tag">Get In Touch</p>
       <h2>Visit Our Academy</h2>
-      <p>📍 Bafal-13, Kathmandu, Nepal</p>
-      <p>📞 +977-98XXXXXXXX</p>
+      <p>📍 <a href="https://share.google/8bpNKQO0iYEYBhEjK" target="_blank" rel="noopener noreferrer">Bafal-13, Kathmandu, Nepal · Get directions</a></p>
+      <p>📞 <a href="tel:+9779841458502">9841 458502</a> · <a href="tel:+9779709558185">9709 558185</a></p>
       <p>✉️ info@sagarmathacricketacademy.com.np</p>
       <p>⏰ Sunday – Friday, 7:00 AM – 6:00 PM</p>
       <div class="social-links">
-        <a href="#" aria-label="Facebook">f</a>
+        <a href="https://www.facebook.com/profile.php?id=61594186101064&amp;mibextid=ZbWKwL" aria-label="Facebook" target="_blank" rel="noopener noreferrer">f</a>
         <a href="#" aria-label="Instagram">◎</a>
         <a href="#" aria-label="YouTube">▶</a>
       </div>
